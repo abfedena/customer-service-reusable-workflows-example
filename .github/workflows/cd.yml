@@ -18,7 +18,7 @@ jobs:
     permissions:
       id-token: write # need this for OIDC
       contents: read
-    uses: abfedena/customer-service-reusable-workflows-example/.github/workflows/deploy.yml@main
+    uses: abfedena/reusable-workflows-modules-1/.github/workflows/deploy.yml@main
     with:
       env: ${{ github.event.inputs.environment }}
     secrets: inherit
