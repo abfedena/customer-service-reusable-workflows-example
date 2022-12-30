@@ -3,10 +3,6 @@ name: CI/CD pipeline
 # Define which action triggers the workflow
 on: 
   push: 
-    branches:       
-      - dev # Direct push is allowed, this deploys to a staging server
-      - beta # Protected branch, no direct push, only accepted merge is allowed
-      - main # Protected branch, no direct push, only accepted merge is allowed
 
 jobs:
   auth:
@@ -19,7 +15,7 @@ jobs:
       contents: read
       id-token: write 
 
-   steps:
+  steps:
      # I only need to declare environment variables once at the beginning
      # The subsequent steps can access the variables by default
     - name: Configuration for main branch
