@@ -43,5 +43,3 @@ jobs:
       with:
         workload_identity_provider: ${{ env.GCP_WIP }}
         service_account: ${{ env.GCP_SA }}
-
-    ...
