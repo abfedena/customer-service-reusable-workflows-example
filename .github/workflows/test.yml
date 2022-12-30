@@ -14,5 +14,14 @@ jobs:
          run: |
           echo "GCP_WIP=${{ secrets.MAIN_WIP }}" >> $GITHUB_ENV
           echo "GCP_SA=${{ secrets.MAIN_SA }}" >> $GITHUB_ENV
+    lndev:
+      runs-on: "ubuntu-latest"
+      timeout-minutes: 15
+      steps:  
+       - name: Configuration for main branch
+         if: ${{ github.ref == 'refs/heads/main' }}
+         run: |
+          echo "this is main job calls"
+          echo "this is hosting system"
 
      
