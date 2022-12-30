@@ -2,7 +2,7 @@ name: CI/CD pipeline
 
 # Define which action triggers the workflow
 on: 
-  push: 
+  push:
 
 jobs:
   auth:
@@ -15,7 +15,7 @@ jobs:
       contents: read
       id-token: write 
 
-  steps:
+    steps:
      # I only need to declare environment variables once at the beginning
      # The subsequent steps can access the variables by default
     - name: Configuration for main branch
@@ -43,3 +43,4 @@ jobs:
       with:
         workload_identity_provider: ${{ env.GCP_WIP }}
         service_account: ${{ env.GCP_SA }}
+     
